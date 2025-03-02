@@ -41,22 +41,32 @@ def fib_hashing(text):
     # Multiply all matrices together
     result_matrix = matrices[0]
     for matrix in matrices[1:]:
-        result_matrix = np.dot(result_matrix, matrix)
+        result_matrix ^= matrix
+        result_matrix ^= (result_matrix << 5)
+        result_matrix ^= (result_matrix >> 3)
 
     flattened_matrix = result_matrix.flatten()
     hash_process = sum(flattened_matrix)
 
-    # Reduce hash_process to a manageable size
-    hash_process = hash_process % 1000000
+    hash_process ^= (hash_process >> 8) ^ (hash_process & 0xff) ^ (hash_process << 8) ^ (hash_process << 3) ^ (hash_process >> 5)
 
-    hash_value = fibonacci(hash_process)
+    if length < 15:
+        hash_process = hash_process ^ (hash_process >> 4)
+        hash_process = hash_process * 0x85ebca6bf
+        for _ in range(10):  # Add more rounds of mixing
+            hash_process ^= (hash_process >> 8) ^ (hash_process & 0xff) ^ (hash_process << 8)
+
+    hash_process = hash_process % (2 ** 32)
+
+    fib_value = fibonacci((hash_process ^ (hash_process >> 16)) & 0xFFF)
+    hash_value ^= (fib_value << 5) ^ (fib_value >> 3)
 
    
-    fixed_size_hash = f"{hash_value:032x}"
+    fixed_size_hash = f"{hash_value:064x}"
     fixed_size_hash = fixed_size_hash[:64]
 
     return fixed_size_hash
 
-text = "Lets Try This One More Time"
+text = "Ah shit, Here we go again"
 hash_value = fib_hashing(text)
 print(f"Final fixed-size hash value: {hash_value}")
