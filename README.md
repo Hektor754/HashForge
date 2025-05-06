@@ -1,37 +1,49 @@
-# HashForge: Building Hash Functions from Scratch
+# HashForge: Learn Hashing, Security, and Cryptography by Building
 
-![Animated HashForge Banner](https://your-image-link.com/banner.gif)
+![HashForge Banner](https://your-image-link.com/banner.gif)
 
-Welcome to **HashForge**! This repository is dedicated to the exploration, development, and optimization of hash functions, implemented entirely in Python. Whether you're diving into cryptographic concepts, experimenting with collision resistance, or just curious about how hashes work at a low level, you've come to the right place. 
+**HashForge** is a practical, project-based cryptography lab that teaches you core security concepts through real implementations. You'll start with basic hashing and level up to building secure systems, breaking weak algorithms, and simulating real-world applications like password managers and blockchains.
 
-## Features
-- **Custom Hash Functions**: Implementing hashing from the ground up.
-- **Optimization**: Improving efficiency and security.
-- **Collision Resistance Testing**: Evaluating function robustness.
-- **Comparison & Benchmarking**: Against standard hashing algorithms.
-- **Cryptographic Exploration**: Understanding security implications.
 
-## Project Structure
-```
-📦 HashForge
- ┣ 📂 src           # Core hashing implementations
- ┣ 📂 tests         # Unit tests and collision analysis
- ┣ 📂 benchmarks    # Performance comparisons
- ┣ 📜 README.md     # Project documentation
- ┣ 📜 requirements.txt # Dependencies (if any)
-```
+## 🧠 What You’ll Learn
 
-## Contributing
-Contributions are welcome! Feel free to submit pull requests or open issues to discuss improvements.
+- How hashing algorithms work and what makes them secure
+- Techniques like salting, HMAC, and key stretching
+- File integrity verification, password storage, and message authentication
+- Digital signatures and data encryption using modern standards
+- How to simulate blockchains, secure chat systems, and authentication flows
+- Recognizing and exploiting weaknesses in outdated hash functions
 
-## Security Disclaimer
-This repository is for educational and experimental purposes only. Do not use custom hash functions for real-world security applications unless they have undergone rigorous cryptographic validation.
 
-## License
-This project is licensed under the MIT License.
+## 🔨 Hands-On Projects
+
+> HashForge is organized as a series of themed mini-projects with increasing complexity.
+
+- **Hash Basics** – Password hashing, file checksums, SHA & MD5 usage
+- **Security Essentials** – Salting, HMAC, bcrypt/scrypt, timing attack defense
+- **Applications** – Password manager, secure messaging, digital signatures
+- **Blockchain** – Build a proof-of-work system and understand how blocks get linked
+- **Cryptanalysis** – Simulate hash collisions and brute-force attacks on MD5/SHA-1
+- **Encryption + Hashing** – Combine AES with HMAC for secure data storage
+
+
+## 🛡 Security Disclaimer
+
+This repository is intended **for educational purposes only**. Do not use custom cryptographic implementations in production environments. Always rely on peer-reviewed, trusted libraries for real-world applications.
 
 ---
-Happy hashing!
 
+## 🧑‍💻 Contributing
+
+Ideas, improvements, and experiments are welcome! Open a pull request or suggest features via issues.
+
+---
+
+## 📄 License
+
+MIT License.
+
+---
+
+Build. Break. Learn.  
 ![Hash Animation](https://your-image-link.com/hash-animation.gif)
-
