@@ -2,7 +2,6 @@ import bcrypt
 
 file = "src/Hashing_with_salts/password_storage.txt"
 
-# Reading the stored hash and salt
 with open(file, 'r') as f:
     lines = f.readlines()
     
@@ -19,7 +18,7 @@ def brute_force_attack_rsalt(possible_passwords):
         # Random salt each time (This makes it impossible to match)
         hashed_guess = bcrypt.hashpw(guess.encode(), bcrypt.gensalt())
         if hashed_guess == stored_hashed:
-            print(f"✅ Password Found: {guess}")
+            print(f" Password Found: {guess}")
             return guess
     print(" Password not found (Random Salt makes it impossible).")
     return None
@@ -37,11 +36,9 @@ def brute_force_attack_withsalt(possible_passwords, stored_salt):
     print(" Password not found (even with known salt).")
     return None
 
-# Running both brute force attacks
 guess = brute_force_attack_rsalt(possible_passwords)
 guess2 = brute_force_attack_withsalt(possible_passwords, stored_salt)
 
-# Outputting results clearly
 if guess is not None:
     print(f"\n The password (found without knowing the salt) is: {guess}")
 else:
