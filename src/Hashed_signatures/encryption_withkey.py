@@ -14,14 +14,9 @@ with open(private_file, 'rb') as key_file:
 msg_file = "src/Hashed_signatures/test_message.txt"
 
 with open(msg_file, 'r+') as msg:
-    content = msg.read().encode()
-
-    hasher = hashes.Hash(hashes.SHA256(), backend=default_backend())
-    hasher.update(content)
-    hashed_message = hasher.finalize()
-
+    content = msg.read()
     signature = private_key.sign(
-        hashed_message,
+        content.encode(),
         padding.PSS(
             mgf=padding.MGF1(hashes.SHA256()),
             salt_length=padding.PSS.MAX_LENGTH
