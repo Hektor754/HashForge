@@ -43,6 +43,10 @@ Ideas, improvements, and experiments are welcome! Open a pull request or suggest
 
 MIT License.
 
+## Disclaimer
+
+Any of the keys provided private or public are used for demostration reasons. DO NOT use these key for secure applications.
+
 ---
 
 Build. Break. Learn.  
