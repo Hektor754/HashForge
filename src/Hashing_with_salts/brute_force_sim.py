@@ -1,6 +1,6 @@
 import bcrypt
 
-file = "password_storage.txt"
+file = "src/Hashing_with_salts/password_storage.txt"
 
 with open(file, 'r') as f:
     lines = f.readlines()
@@ -10,7 +10,7 @@ with open(file, 'r') as f:
     
 possible_password = ["password", "password123", "letmein", "12345qwert", "admin", "user", "user123"]
 
-def brute_force_attack(possible_password):
+def brute_force_attack_rsalt(possible_password):
     for guess in possible_password:
         print(f"Trying password : {guess}")
         hashed_guess = bcrypt.hashpw(guess.encode(), bcrypt.gensalt())
@@ -21,6 +21,6 @@ def brute_force_attack(possible_password):
             print("Password not found")
     return None
 
-guess = brute_force_attack(possible_password)
+guess = brute_force_attack_rsalt(possible_password)
 if guess is not None:
     print(f"The password is : {guess}")
