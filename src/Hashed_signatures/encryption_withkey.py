@@ -5,8 +5,8 @@ from cryptography.hazmat.backends import default_backend
 private_file = "src/Hashed_signatures/private_key.pem"
 with open(private_file, 'rb') as key_file:
     private_key = serialization.load_pem_private_key(
-        key_file.read()
-        PASSWORD = None
+        key_file.read(),
+        PASSWORD = None,
         backend = default_backend()
     )
     
