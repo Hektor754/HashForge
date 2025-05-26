@@ -8,5 +8,8 @@ def create_hmac(message : str, key : bytes) -> str:
 
 def send_message(message : str):
     mac = create_hmac(message, SECRET_KEY)
-    with open('packet.txt', 'x') as p:
+    with open('packet.txt', 'w') as p:
         p.write(f"Message : {message}\nHMAC : {mac}")
+
+message = 'message.txt'
+send_message(message)
