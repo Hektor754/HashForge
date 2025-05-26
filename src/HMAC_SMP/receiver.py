@@ -16,7 +16,7 @@ def verify_message(packet: str, key: bytes) -> bool:
     return hmac.compare_digest(received_hmac, expected_hmac)
 
 packet = 'packet.txt'
-result = verify_message(packet)
+result = verify_message(packet,SECRET_KEY)
 
 if result is True:
     print("Results match the code hasn't been tampered")

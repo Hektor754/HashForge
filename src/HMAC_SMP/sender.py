@@ -11,5 +11,7 @@ def send_message(message : str):
     with open('packet.txt', 'w') as p:
         p.write(f"Message : {message}\nHMAC : {mac}")
 
-message = 'message.txt'
-send_message(message)
+message = 'src/HMAC_SMP/message.txt'
+with open(message, 'r') as f:
+    content = f.read()
+send_message(content)
