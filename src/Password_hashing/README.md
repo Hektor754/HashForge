@@ -14,13 +14,13 @@ password_hashing/
 
 ## How It Works
 
-* `file_one.py`:
+* `main.py`:
 
   * Prompts the user to enter a password.
   * Hashes the password using `PBKDF2 HMAC` with SHA-256 and 100,000 iterations.
   * Saves the hashed password (in hexadecimal format) to `store_password.txt`.
 
-* `file_three.py`:
+* `verify_hash.py`:
 
   * Reads the stored hashed password from `store_password.txt`.
   * Prompts the user to input a password.
@@ -29,16 +29,16 @@ password_hashing/
 
 ## Usage
 
-1. Run `file_one.py` to hash and store your password:
+1. Run `main.py` to hash and store your password:
 
    ```bash
-   python file_one.py
+   python main.py
    ```
 
-2. Run `file_three.py` to verify a password against the stored hash:
+2. Run `verify_hash.py` to verify a password against the stored hash:
 
    ```bash
-   python file_three.py
+   python verify_hash.py
    ```
 
 ## Dependencies
