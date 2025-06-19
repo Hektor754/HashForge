@@ -7,9 +7,9 @@ This project demonstrates a basic password hashing mechanism in Python using the
 ```
 password_hashing/
 │
-├── file_one.py          # Hashes and stores the password
+├── main.py          # Hashes and stores the password
 ├── store_password.txt   # Stores the hashed password (auto-generated)
-├── file_three.py        # Verifies user password against stored hash
+├── verify_hash.py        # Verifies user password against stored hash
 ```
 
 ## How It Works
